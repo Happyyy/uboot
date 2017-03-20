@@ -1,0 +1,26 @@
+uboot sf commands
+SPI NOR flash can be accessed through uboot sf commands.
+* sf probe
+* sf erase
+* sf write
+* sf read
+sf probe
+To detect the SPI NOR flash
+Syntax: sf probe [bus:] cs [hz] [mode]
+Example: 
+	sf probe 2:0
+
+sf erase
+It is used to erase the erase blocks.
+Syntax: sf erase offset len
+Example:
+	sf erase 0x0 0x300000
+sf write 
+Syntax: sf write mem-addr offset len
+Example: 
+	sf write 0x42000000 0x0 0x300000
+
+sf read
+Syntax: sf read mem-addr offset len
+Example:
+sf read 0x42000000 0x0 0x300000
