@@ -3,6 +3,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        sh 'git branch -a'
+        sh 'git checkout -b master remotes/origin/master'
+        sh 'git pull'
         sh 'make clean'
         sh 'make sc589-mini_defconfig'
         sh 'make'
